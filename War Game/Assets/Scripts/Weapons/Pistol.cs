@@ -13,6 +13,9 @@ public class Pistol : MonoBehaviour
     [SerializeField]
     int ammoAmount = 55;
 
+    [SerializeField]
+    Bullet bullet;
+
     int clipAmount;
 
     bool canShoot = true;
@@ -55,6 +58,8 @@ public class Pistol : MonoBehaviour
             {
                 canShoot = false;
                 clipAmount--;
+                var localBullet = Instantiate(bullet);
+                localBullet.transform.parent = null;
                 StartCoroutine(RechargeShooting());
             }
         }
