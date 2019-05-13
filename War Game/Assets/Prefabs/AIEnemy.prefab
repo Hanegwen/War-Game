@@ -22,6 +22,9 @@ GameObject:
   - component: {fileID: 33548641729648076}
   - component: {fileID: 23456648505551454}
   - component: {fileID: 136192441938213632}
+  - component: {fileID: 114715499430846320}
+  - component: {fileID: 114836824684217878}
+  - component: {fileID: 114095911414785212}
   m_Layer: 0
   m_Name: AIEnemy
   m_TagString: Untagged
@@ -36,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1649713681054602}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.915524, y: 3.22, z: 26.981281}
+  m_LocalPosition: {x: 6.21, y: 1.387, z: 1.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,6 +87,54 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1649713681054602}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114095911414785212
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1649713681054602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cff888e677779a449952c2b0af5a7f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eyepoint: {fileID: 0}
+  DecisionDelayTime: 1
+  RaycastDistance: 100
+  GoalPosition: {x: 0, y: 0, z: 0}
+  GoalRotation: {x: 0, y: 0, z: 0, w: 0}
+  movementspeed: 0.01
+  rotationspeed: 0.1
+  viewRange: 45
+--- !u!114 &114715499430846320
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1649713681054602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b290483b887887b42ba2e511c394c0f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  hasRechargeHealthAbility: 0
+  healthRechargeDelay: 1.5
+  healthRechargeAmountInPercent: 1
+--- !u!114 &114836824684217878
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1649713681054602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84f6ff0dcff8d54198f64f9ab1b4b38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canAttack: 1
+  AttackRecharge: 0.1
 --- !u!136 &136192441938213632
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -91,7 +142,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1649713681054602}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2

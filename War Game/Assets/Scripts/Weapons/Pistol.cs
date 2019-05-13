@@ -8,17 +8,20 @@ public class Pistol : MonoBehaviour
     float shootingRechargeTime = .3f;
 
     [SerializeField]
-    int clipAmount = 7;
+    static int clipSize = 7;
 
     [SerializeField]
     int ammoAmount = 55;
+
+    int clipAmount;
 
     bool canShoot = true;
 
 	// Use this for initialization
 	void Start ()
     {
-		
+        clipAmount = clipSize;
+        ammoAmount -= clipAmount;
 	}
 	
 	// Update is called once per frame
@@ -27,13 +30,39 @@ public class Pistol : MonoBehaviour
 		
 	}
 
+    public void Reload()
+    {
+        ammoAmount += clipAmount;
+        clipAmount = 0;
+        if(ammoAmount >= clipSize)
+        {
+            clipAmount = clipSize;
+            ammoAmount -= clipAmount;
+        }
+        else
+        {
+            clipAmount = ammoAmount;
+            ammoAmount = 0;
+        }
+
+    }
+
     public void Shoot()
     {
-
+        if(clipAmount >= 1)
+        {
+            if (canShoot)
+            {
+                canShoot = false;
+                clipAmount--;
+                StartCoroutine(RechargeShooting());
+            }
+        }
     }
 
     IEnumerator RechargeShooting()
     {
         yield return new WaitForSeconds(shootingRechargeTime);
+        canShoot = true;
     }
 }
