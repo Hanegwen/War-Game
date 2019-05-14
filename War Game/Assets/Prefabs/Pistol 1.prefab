@@ -199,3 +199,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootingRechargeTime: 0.3
   ammoAmount: 55
+  bullet: {fileID: 0}

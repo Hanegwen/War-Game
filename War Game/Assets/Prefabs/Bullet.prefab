@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4162681442481486}
   - component: {fileID: 33112728553494478}
   - component: {fileID: 23818578349799886}
+  - component: {fileID: 114850269415825746}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -34,9 +35,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1993325978755596}
-  m_LocalRotation: {x: 0.000000021855694, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.35789672, y: 0.17163052, z: -0.00091643323}
-  m_LocalScale: {x: 0.099999994, y: 0.099999994, z: 0.099999994}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.32846195, y: 0.328462, z: 0.328462}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -83,3 +84,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1993325978755596}
   m_Mesh: {fileID: 4300004, guid: 788267e74b26df7408c35e159e98bcb9, type: 3}
+--- !u!114 &114850269415825746
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1993325978755596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c2cd507d53a8e94fafaae1dbeba0000, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
