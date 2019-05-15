@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AIAttack : MonoBehaviour
 {
-    CapsuleCollider capsuleCollider;
+    //CapsuleCollider capsuleCollider;
 
     [SerializeField]
     bool canAttack = true;
@@ -14,7 +14,7 @@ public class AIAttack : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        capsuleCollider = GetComponent<CapsuleCollider>();
+        //capsuleCollider = GetComponent<CapsuleCollider>();
 	}
 	
 	// Update is called once per frame
@@ -27,7 +27,7 @@ public class AIAttack : MonoBehaviour
     {
         if(canAttack)
         {
-            capsuleCollider.enabled = false;
+            //capsuleCollider.enabled = false;
             StartCoroutine(AttackCooldown());
         }
     }
@@ -35,7 +35,7 @@ public class AIAttack : MonoBehaviour
     IEnumerator AttackCooldown()
     {
         yield return new WaitForSeconds(AttackRecharge);
-        capsuleCollider.enabled = true;
+       // capsuleCollider.enabled = true;
         canAttack = true;
     }
 }

@@ -31,11 +31,11 @@ public class AIMovement : MonoBehaviour
     [SerializeField]
     float viewRange = 45;
 
-    Animator animator;
+   // Animator animator;
 	// Use this for initialization
 	void Start ()
     {
-        animator = FindObjectOfType<Animator>();
+        //animator = FindObjectOfType<Animator>();
         GoalPosition = this.transform.position;
         GoalRotation = this.transform.rotation;
 	}
@@ -62,11 +62,11 @@ public class AIMovement : MonoBehaviour
         {
             print("Should be Moving to Goal Point");
             transform.position = Vector3.Lerp(this.transform.position, GoalPosition, movementspeed);
-            animator.SetBool("isWalking", true);
+           // animator.SetBool("isWalking", true);
         }
         else
         {
-            animator.SetBool("isWalking", false);
+            //animator.SetBool("isWalking", false);
         }
     }
 

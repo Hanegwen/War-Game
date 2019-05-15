@@ -17,6 +17,6 @@ public class Bullet : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        this.gameObject.transform.position += this.gameObject.transform.forward * speed * Time.deltaTime;
+        this.gameObject.transform.position += this.gameObject.transform.right * speed * Time.deltaTime;
 	}
 }

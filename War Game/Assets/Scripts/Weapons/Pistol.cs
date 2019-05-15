@@ -58,7 +58,8 @@ public class Pistol : MonoBehaviour
             {
                 canShoot = false;
                 clipAmount--;
-                var localBullet = Instantiate(bullet);
+                var localBullet = Instantiate(bullet,this.transform,false);
+                //localBullet.transform.Rotate(Vector3.left * -90);
                 localBullet.transform.parent = null;
                 StartCoroutine(RechargeShooting());
             }
