@@ -8,6 +8,9 @@ public class Bullet : MonoBehaviour
     [SerializeField]
     float speed;
 
+    [SerializeField]
+    float damage = 1;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -19,4 +22,12 @@ public class Bullet : MonoBehaviour
     {
         this.gameObject.transform.position += this.gameObject.transform.right * speed * Time.deltaTime;
 	}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.GetComponent<AIHealth>() != null)
+        {
+            other.GetComponent<AIHealth>().TakeDamage(damage);
+        }
+    }
 }

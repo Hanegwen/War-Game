@@ -11,6 +11,9 @@ public class AIAttack : MonoBehaviour
 
     [SerializeField]
     float AttackRecharge = .1f;
+
+    [SerializeField]
+    public float AttackRange = 3;
 	// Use this for initialization
 	void Start ()
     {
@@ -20,15 +23,22 @@ public class AIAttack : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        Attack();
+        //Attack();
 	}
 
-    void Attack()
+    public void Attack(float distance)
     {
         if(canAttack)
         {
+            print("AI is Attacking and ISNOT playing Animation");
+
+            canAttack = false;
             //capsuleCollider.enabled = false;
             StartCoroutine(AttackCooldown());
+        }
+        else
+        {
+            print("AI Attack cooldown");
         }
     }
 

@@ -7,16 +7,20 @@ public class Pistol : MonoBehaviour
     [SerializeField]
     float shootingRechargeTime = .3f;
 
+    [Tooltip("This is the amount of ammo a clip can hold")]
     [SerializeField]
-    static int clipSize = 7;
+    public static int clipSize = 7;
 
+    [Tooltip("This is how much ammo left NOT in the clip")]
     [SerializeField]
-    int ammoAmount = 55;
+    public int ammoAmount = 55;
 
     [SerializeField]
     Bullet bullet;
 
-    int clipAmount;
+    [Tooltip("This is the amount of Bullets in the current clip")]
+    [HideInInspector]
+    public int clipAmount;
 
     bool canShoot = true;
 

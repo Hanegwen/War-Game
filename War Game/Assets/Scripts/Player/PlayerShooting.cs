@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerShooting : MonoBehaviour
 {
     [SerializeField]
-    Pistol ActiveWeapon;
+    public Pistol ActiveWeapon;
 	// Use this for initialization
 	void Start ()
     {

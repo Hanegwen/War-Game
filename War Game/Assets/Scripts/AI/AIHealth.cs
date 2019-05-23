@@ -38,11 +38,26 @@ public class AIHealth : MonoBehaviour
         }
 	}
 
-    public void TakeDamage()
+    public void TakeDamage(float damage)
     {
+        currentHealth -= damage;
+        print("AI hit by BUllet");
+
         rechargeHealth = false;
         StopAllCoroutines();
-        RechargeHealthCooldown();
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+        else
+        {
+            RechargeHealthCooldown();
+        }
+    }
+
+    void Die()
+    {
+        print(this.gameObject.name + " Should Die");
     }
 
     void RechargeHealth()
